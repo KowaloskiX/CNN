@@ -1,0 +1,21 @@
+{
+  "name": "CNN Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "vscjava.vscode-java-pack"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "echo 'Dev container ready! Backend: C++ with CMake | Frontend: Java'",
+  "remoteUser": "vscode"
+}
