@@ -41,16 +41,15 @@ javac -d bin src/com/classifier/**/*.java
 
 ## Troubleshooting
 
-### Hash Sum Mismatch Errors
-If you see "Hash Sum mismatch" errors during build:
-- This is a transient Ubuntu mirror sync issue
-- The Dockerfile includes automatic retry logic
-- If it persists, rebuild the container: `CMD/CTRL + Shift + P` → "Dev Containers: Rebuild Container"
-- Or clear Docker cache: `docker system prune -a` (removes all unused images)
+### Container build is slow
+- First build downloads Microsoft's base image (~1-2GB)
+- Subsequent builds are much faster due to caching
+- The base image includes C++ tools pre-installed
 
-### Container fails to build on M2 Mac
-- The Dockerfile uses Ubuntu (not Debian) for better ARM64 support
-- If you still have issues, try: Docker Desktop → Settings → Use Rosetta for x86/amd64 emulation
+### Container fails to build
+- The Dockerfile uses Microsoft's official dev container base image for reliability
+- If issues persist, clear Docker cache: `docker system prune -a`
+- Then rebuild: `CMD/CTRL + Shift + P` → "Dev Containers: Rebuild Container"
 
 ### Port conflicts
 - The container forwards port 8080 by default
