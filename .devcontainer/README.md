@@ -5,8 +5,10 @@ This dev container provides a consistent development environment for the CNN pro
 ## What's Included
 
 - **C++ Toolchain**: g++, CMake, build-essential (from Microsoft's base image)
+- **C++ Dependencies**: OpenCV, libmicrohttpd (pre-installed)
 - **Java**: OpenJDK 17 (installed via Dev Container Feature from GitHub)
 - **Tools**: git, curl, wget, vim
+- **Auto-cleanup**: Stale build directories are cleaned on container start
 
 ## Prerequisites
 
@@ -24,10 +26,17 @@ This dev container provides a consistent development environment for the CNN pro
 ## Building the Project
 
 ### Backend (C++)
+All dependencies (OpenCV, libmicrohttpd) are pre-installed!
+
 ```bash
 cd backend
-mkdir -p build
-cd build
+./build.sh
+```
+
+Or manually:
+```bash
+cd backend
+mkdir build && cd build
 cmake ..
 make
 ```
@@ -35,7 +44,6 @@ make
 ### Frontend (Java)
 ```bash
 cd frontend
-# Compile Java files
 javac -d bin src/com/classifier/**/*.java
 ```
 

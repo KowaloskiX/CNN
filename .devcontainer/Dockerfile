@@ -3,5 +3,13 @@
 # Java will be installed via dev container features (see devcontainer.json)
 FROM mcr.microsoft.com/devcontainers/cpp:ubuntu-22.04
 
+# Install project-specific dependencies
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libopencv-dev \
+        libmicrohttpd-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /workspace

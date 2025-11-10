@@ -23,6 +23,6 @@
     }
   },
   "forwardPorts": [8080],
-  "postCreateCommand": "echo 'Dev container ready! Backend: C++ with CMake | Frontend: Java'",
+  "postCreateCommand": "rm -rf backend/build && echo '✓ Dev container ready! C++ (with OpenCV & libmicrohttpd) + Java 17'",
   "remoteUser": "vscode"
 }
