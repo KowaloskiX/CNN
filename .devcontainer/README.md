@@ -4,8 +4,8 @@ This dev container provides a consistent development environment for the CNN pro
 
 ## What's Included
 
-- **C++ Toolchain**: g++, CMake, build-essential
-- **Java**: OpenJDK 17
+- **C++ Toolchain**: g++, CMake, build-essential (from Microsoft's base image)
+- **Java**: OpenJDK 17 (installed via Dev Container Feature from GitHub)
 - **Tools**: git, curl, wget, vim
 
 ## Prerequisites
@@ -41,13 +41,18 @@ javac -d bin src/com/classifier/**/*.java
 
 ## Troubleshooting
 
-### Container build is slow
-- First build downloads Microsoft's base image (~1-2GB)
-- Subsequent builds are much faster due to caching
-- The base image includes C++ tools pre-installed
+### Container build is slow on first run
+- First build downloads Microsoft's base image (~1-2GB) and Java from GitHub
+- Subsequent builds are much faster due to Docker layer caching
+- The setup avoids Ubuntu's ARM64 repositories entirely for maximum reliability
+
+### Why This Setup?
+This dev container uses:
+- **Microsoft's C++ base image** - Pre-built, tested, and cached
+- **Dev Container Features for Java** - Downloads from GitHub (ghcr.io) instead of Ubuntu's problematic ARM64 mirrors
+- This approach completely avoids the hash sum mismatch errors common with Ubuntu ARM64 repositories
 
 ### Container fails to build
-- The Dockerfile uses Microsoft's official dev container base image for reliability
 - If issues persist, clear Docker cache: `docker system prune -a`
 - Then rebuild: `CMD/CTRL + Shift + P` → "Dev Containers: Rebuild Container"
 
