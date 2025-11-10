@@ -1,150 +1,26 @@
-# C++ Backend
 # Build directories
-backend/build/
-backend/cmake-build-*/
-backend/out/
+**/build/
+**/bin/
 
-# CMake
-CMakeCache.txt
-CMakeFiles/
-CMakeScripts/
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-# Compiled Object files
-*.slo
-*.lo
+# C++ compiled files
 *.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
 *.out
-*.app
-backend/server
-backend/train
-backend/test_neural_network
 
-# Java Frontend
-# Compiled class files
+# Java compiled files
 *.class
 
-# Package Files
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# Build directories
-frontend/bin/
-frontend/build/
-frontend/target/
-frontend/dist/
-frontend/out/
-
-# IDE Files
-# Eclipse
+# IDE files
+.vscode/
+.idea/
+*.iml
 .classpath
 .project
 .settings/
-.metadata
 
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# NetBeans
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# Visual Studio
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Operating System
-# macOS
+# OS files
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-
-# Windows
 Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Linux
-*~
-.directory
-
-# Logs and databases
-*.log
-*.sql
-*.sqlite
-*.db
 
 # Temporary files
-*.tmp
-*.temp
 *.swp
-*.swo
 *~
-.*.sw?
-
-# Package manager directories
-node_modules/
-bower_components/
-
-# Environment and configuration
-.env
-.env.local
-.env.*.local
-*.secret
-config.local.*
-
-# Model files and data (uncomment if you want to ignore these)
-# *.model
-# *.weights
-# *.h5
-# *.pb
-# data/
-# dataset/
-
-# Documentation build output
-docs/_build/
-site/
