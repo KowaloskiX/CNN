@@ -24,3 +24,10 @@ Thumbs.db
 # Temporary files
 *.swp
 *~
+
+# Data and models (don't commit large files)
+**/data/
+**/models/
+*.bin
+*.h5
+*.pkl
